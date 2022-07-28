@@ -13,7 +13,7 @@ grid_locations = [
 ]
 
 ships_location = []
-
+ships_sank = []
 guessed_locations = []
 
 
@@ -71,6 +71,7 @@ def hit_board(number, board):
     board[int(number[1])][int(number[0])] = "X"
     set_board(board)
     x = str(player_guess.upper())
+    ships_sank.append(x)
     ships_location.remove(x)
 
 
@@ -130,16 +131,43 @@ def guess_check(player_guess):
         player_turn()
 
 
+def clear_table():
+    """
+    Clears table and generates a new board with new ships
+    """
+    board.clear()
+    ships_location.clear()
+    guessed_locations.clear()
+    grid_locations.append(ships_sank)
+    ships_sank.clear()
+    create_board()
+    set_board(board)
+    spawn_ships()
+    print(ships_location)
+    player_turn()
+
+
+def new_game():
+    """
+    Checks if user wants to play again
+    """
+    n = str(input("Press Y to play again!"))
+    if n.upper() == "Y":
+        clear_table()
+
+
 def player_turn():
     """
-    Checks that player has run out of turns or if game has been won.
+    Checks if player has run out of turns or if game has been won.
     If neither is true then asks player for next shot
     """
     if len(guessed_locations) > 10:
         print("Your out of moves! Game over!")
+        new_game()
 
-    elif len(ships_location) == 0:
+    elif len(ships_sank) == 4:
         print("Congratulations! You Won!")
+        new_game()
 
     else:
         global player_guess
