@@ -64,6 +64,10 @@ def check_col(player_guess):
 
 
 def hit_board(number, board):
+    """
+    If player hits ship, it marks an X on the board.
+    Then removes ship from ships_location
+    """
     board[int(number[1])][int(number[0])] = "X"
     set_board(board)
     x = str(player_guess.upper())
@@ -84,9 +88,17 @@ def check_hit(player_guess):
 
 
 def check_duplicate(player_guess):
+    """
+    Ensures players guess has not already been used.
+    Then checks that players guess is within row length.
+    Then adds player shots to guessed_locations
+    """
     if str(player_guess.upper()) in guessed_locations:
         print("You already shot there!")
         set_board(board)
+        player_turn()
+    elif int(number[1]) < 1 or int(number[1]) > 6:
+        print("That point is not in the ocean! Try Again!")
         player_turn()
     else:
         check_col(player_guess)
@@ -106,15 +118,21 @@ def guess_check(player_guess):
             check_duplicate(player_guess)
 
         except:
-            print("Invalid location. Try Again!")
+            print("That point is not in the ocean! Try Again!")
             player_turn()
 
 
 def player_turn():
+    """
+    Checks that player has run out of turns or if game has been won.
+    If neither is true then asks player for next shot
+    """
     if len(guessed_locations) > 10:
-        print("Your out of moves ! Game over!")
+        print("Your out of moves! Game over!")
+
     elif len(ships_location) == 0:
         print("Congratulations! You Won!")
+
     else:
         global player_guess
         player_guess = input("Enter your shot coordinates(in the form A1): ")
