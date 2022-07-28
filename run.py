@@ -60,7 +60,7 @@ def check_col(player_guess):
     """
     global number
     number = str(x_axis.index(player_guess[0].upper())) + player_guess[1]
-    print(number)
+    print(number[1])
 
 
 def hit_board(number, board):
@@ -97,9 +97,6 @@ def check_duplicate(player_guess):
         print("You already shot there!")
         set_board(board)
         player_turn()
-    elif int(number[1]) < 1 or int(number[1]) > 6:
-        print("That point is not in the ocean! Try Again!")
-        player_turn()
     else:
         check_col(player_guess)
         check_hit(player_guess)
@@ -108,18 +105,29 @@ def check_duplicate(player_guess):
         player_turn()
 
 
+def check_row(player_guess):
+    """
+    Checks that the row selection from the players shot is valid
+    """
+    if int(player_guess[1]) < 1 or int(player_guess[1]) > 6:
+        print("That point is not in the ocean! Try Again!")
+        player_turn()
+    else:
+        check_duplicate(player_guess)
+
+
 def guess_check(player_guess):
     """
     Checks if the players guess is on the board
     """
-    if str(player_guess.upper()) in grid_locations or ships_location:
-        try:
+    try:
+        if str(player_guess.upper()) in grid_locations or ships_location:
             print(player_guess)
-            check_duplicate(player_guess)
+            check_row(player_guess)
 
-        except:
-            print("That point is not in the ocean! Try Again!")
-            player_turn()
+    except:
+        print("That point is not in the ocean! Try Again!")
+        player_turn()
 
 
 def player_turn():
