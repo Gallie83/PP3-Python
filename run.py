@@ -44,15 +44,12 @@ def spawn_ships():
     """
     for i in range(4):
         x = random.choice(grid_locations)
-        if x not in ships_location:
-            ships_location.append(x)
+        ships_location.append(x)
+        grid_locations.remove(x)
 
 
 spawn_ships()
 print(ships_location)
-
-
-player_guess = input("Enter your shot coordinates(in the form A1): ")
 
 
 def check_col(player_guess):
@@ -94,4 +91,10 @@ def guess_check(player_guess):
         print("Invalid location. Try Again!")
 
 
-guess_check(player_guess)
+def player_turn():
+    global player_guess
+    player_guess = input("Enter your shot coordinates(in the form A1): ")
+    guess_check(player_guess)
+
+
+player_turn()
