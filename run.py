@@ -44,7 +44,8 @@ def spawn_ships():
     """
     for i in range(4):
         x = random.choice(grid_locations)
-        ships_location.append(x)
+        while x not in ships_location:
+            ships_location.append(x)
 
 
 spawn_ships()
@@ -54,14 +55,33 @@ print(ships_location)
 player_guess = input("Enter your shot coordinates(in the form A1): ")
 
 
+def check_hit(player_guess):
+    """
+    Checks if player has hit a ship
+    """
+    if str(player_guess.upper()) in ships_location:
+        print("You sunk my battleship!")
+    else:
+        print("Miss!")
+
+
 def guess_check(player_guess):
     """
     Checks if the players guess is on the board
     """
-    if str(player_guess) in grid_locations:
+    if str(player_guess.upper()) in grid_locations:
         print(player_guess)
+        check_hit(player_guess)
     else:
         print("Invalid location. Try Again!")
 
 
 guess_check(player_guess)
+
+
+def check_col(player_guess):
+    number = str(x_axis.index(player_guess[0].upper())) + player_guess[1]
+    print(number)
+
+
+check_col(player_guess)
