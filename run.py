@@ -13,8 +13,12 @@ grid_locations = [
 ]
 
 ships_location = []
+
 ships_sank = []
+
 guessed_locations = []
+
+difficulty = []
 
 
 def create_board():
@@ -131,20 +135,27 @@ def guess_check(player_guess):
         player_turn()
 
 
+def next_round():
+    """
+    Generates a new board with new ships
+    """
+    create_board()
+    set_board(board)
+    spawn_ships()
+    print(ships_location)
+    player_turn()
+
+
 def clear_table():
     """
-    Clears table and generates a new board with new ships
+    Clears table and resets arrays
     """
     board.clear()
     ships_location.clear()
     guessed_locations.clear()
     grid_locations.append(ships_sank)
     ships_sank.clear()
-    create_board()
-    set_board(board)
-    spawn_ships()
-    print(ships_location)
-    player_turn()
+    next_round()
 
 
 def new_game():
@@ -161,7 +172,7 @@ def player_turn():
     Checks if player has run out of turns or if game has been won.
     If neither is true then asks player for next shot
     """
-    if len(guessed_locations) > 10:
+    if len(guessed_locations) > difficulty[0]:
         print("Your out of moves! Game over!")
         new_game()
 
@@ -171,8 +182,27 @@ def player_turn():
 
     else:
         global player_guess
+        print("Remaining chances: " +
+              str(difficulty[0] - len(guessed_locations)))
         player_guess = input("Enter your shot coordinates(in the form A1): ")
         guess_check(player_guess)
 
 
-player_turn()
+def choose_difficulty():
+    """
+    Asks player for difficulty and bases amount of turns on player input
+    """
+    level = input("Choose your difficulty(Easy(32)/Med(25)/Hard(18)): ")
+    if str(level.upper()) == "EASY":
+        difficulty.append(32)
+    elif str(level.upper()) == "MED":
+        difficulty.append(25)
+    elif str(level.upper()) == "HARD":
+        difficulty.append(18)
+    else:
+        print(level + " is not an option!")
+        choose_difficulty()
+    player_turn()
+
+
+choose_difficulty()
