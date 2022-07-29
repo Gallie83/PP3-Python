@@ -64,7 +64,6 @@ def check_col(player_guess):
     """
     global number
     number = str(x_axis.index(player_guess[0].upper())) + player_guess[1]
-    print(number[1])
 
 
 def hit_board(number, board):
@@ -127,7 +126,6 @@ def guess_check(player_guess):
     """
     try:
         if str(player_guess.upper()) in grid_locations or ships_location:
-            print(player_guess)
             check_row(player_guess)
 
     except:
@@ -143,7 +141,7 @@ def next_round():
     set_board(board)
     spawn_ships()
     print(ships_location)
-    player_turn()
+    choose_difficulty()
 
 
 def clear_table():
@@ -172,8 +170,9 @@ def player_turn():
     Checks if player has run out of turns or if game has been won.
     If neither is true then asks player for next shot
     """
-    if len(guessed_locations) > difficulty[0]:
+    if len(guessed_locations) > (difficulty[0] - 1):
         print("Your out of moves! Game over!")
+        print("Ships Remaining: " + str(4 - len(ships_sank)))
         new_game()
 
     elif len(ships_sank) == 4:
