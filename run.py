@@ -162,6 +162,8 @@ def new_game():
     n = str(input("Press Y to play again!"))
     if n.upper() == "Y":
         clear_table()
+    else:
+        print("Thanks for playing!")
 
 
 def player_turn():
