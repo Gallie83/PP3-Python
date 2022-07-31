@@ -20,6 +20,10 @@ guessed_locations = []
 
 difficulty = []
 
+wins = 0
+
+losses = 0
+
 
 def create_board():
     """
@@ -191,13 +195,13 @@ def choose_difficulty():
     """
     Asks player for difficulty and bases amount of turns on player input
     """
-    level = input("Choose your difficulty(Easy(32)/Med(25)/Hard(18)): ")
+    level = input("Choose your difficulty(Easy(30)/Med(20)/Hard(15)): ")
     if str(level.upper()) == "EASY":
-        difficulty.append(32)
+        difficulty.append(30)
     elif str(level.upper()) == "MED":
-        difficulty.append(25)
+        difficulty.append(20)
     elif str(level.upper()) == "HARD":
-        difficulty.append(18)
+        difficulty.append(15)
     else:
         print(level + " is not an option!")
         choose_difficulty()
