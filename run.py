@@ -20,10 +20,6 @@ guessed_locations = []
 
 difficulty = []
 
-wins = 0
-
-losses = 0
-
 
 def create_board():
     """
@@ -59,7 +55,6 @@ def spawn_ships():
 
 
 spawn_ships()
-print(ships_location)
 
 
 def check_col(player_guess):
