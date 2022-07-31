@@ -139,7 +139,6 @@ def next_round():
     create_board()
     set_board(board)
     spawn_ships()
-    print(ships_location)
     choose_difficulty()
 
 
@@ -152,6 +151,7 @@ def clear_table():
     guessed_locations.clear()
     grid_locations.append(ships_sank)
     ships_sank.clear()
+    difficulty.clear()
     next_round()
 
 
