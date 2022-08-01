@@ -79,6 +79,8 @@ This is designed to be a one player game where 4 single space ships are randomly
 * Python code was tested using the <a href="http://pep8online.com/" target="_blank" rel="noopener">Pep8 Website</a> 
 ![Pep8 image](readmeimg/pep8.png)
 
+* Runable heroku page was tested using lighthouse.
+![Lighthouse testing image](readmeimg/lighthouse.png)
 
 ## Technologies Used
 
@@ -93,7 +95,7 @@ This is designed to be a one player game where 4 single space ships are randomly
 
 [Back to top](<#contents>)
 
-<a name="deployment"></a>
+
 ## Deployment
 
     - To prep the application for deployment to Heroku I had to add a newline (\n) 
