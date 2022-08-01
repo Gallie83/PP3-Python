@@ -14,9 +14,12 @@ Github Repository: <a href="https://github.com/Gallie83/PP3-Python" target="_bla
 * [**Bugs**](<#bugs>)
     *  [Resolved Bugs](<#resolved-bugs>)
     *  [Unresolved Bugs](<#unresolved-bugs>)
+* [Testing](#testing)
 * [Technologies Used](#technologies)
 * [Deployment](#deployment)
 * [**Deployment**](<#deployment>)
+* [**Credits**](<#credits>)
+    *  [Content](<#content>)
 *  [**Acknowledgements**](<#acknowledgements>)
 # About
 This battleship game is based on the classic board game- "Battleship".
@@ -46,15 +49,16 @@ This is designed to be a one player game where 4 single space ships are randomly
     
     * The player is then asked to choose the difficulty they would like to play on, this determines how many shots the player will be allowed to take while looking for the 4 hidden ships. The player is then asked to give a coordinate to shoot at in the form of A3. A message then appears informing the player whether they missed or hit a battleship. 
     
-    *The board is then updated and printed to the console showing where the player shot. An exclamation mark "!"  reveals where a player shot and missed, and an "X" shows where they hit a ship. They player is then shown how many shots they have left and is asked to shoot again. 
+    * The board is then updated and printed to the console showing where the player shot. An exclamation mark "!"  reveals where a player shot and missed, and an "X" shows where they hit a ship. They player is then shown how many shots they have left and is asked to shoot again. 
     
-    *Once the player either wins or runs out of lives, a winning or losing message appears and asks if they would like to play again.
+    * Once the player either wins or runs out of lives, a winning or losing message appears and asks if they would like to play again.
 
   * ## Future Features
 
     * An input at the beginning asking what size of board the player would like to play on. 
     * Mulitple lengths of ship that would be placed both horizontally and vertically on the board.
     * A score counter, keeping track of how many games the player has lost or won. 
+    * The board shows where the remaining ships are if player loses the game.
 
 [Back to top](<#contents>)
 
@@ -69,6 +73,12 @@ This is designed to be a one player game where 4 single space ships are randomly
 
 ## Unresolved Bugs
 * I tried to add a score counter, keeping track of the players amount of games won and lost. I had a variable for wins and another for losses, both set to zero. A function would then be called at the end of each round to increment the appropriate variable and diplay how many wins and losses the player had. However, a long list of error messages would pop up at the end of each round and I was unable to figure out a way of making these score counters work. 
+
+# Testing
+
+* Python code was tested using the <a href="http://pep8online.com/" target="_blank" rel="noopener">Pep8 Website</a> 
+![Pep8 image](readmeimg/pep8.png)
+
 
 ## Technologies Used
 
@@ -162,6 +172,12 @@ This is designed to be a one player game where 4 single space ships are randomly
        https://battleship-project3.herokuapp.com/ deployed to Heroku
 
 [Back to top](<#contents>)
+
+# Credits
+## Content
+
+* The random library was imported into python to generate random number for the ships positions.
+* All code, except where otherwise specified, was written by me - Kevin Gallagher
 
 # Acknowledgements
 The site was completed as a Portfolio 3 Project piece for the Full Stack Software Developer Diploma at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community, and all at the Code Institute for their help and support.
