@@ -11,8 +11,11 @@ Github Repository: <a href="https://github.com/Gallie83/PP3-Python" target="_bla
 * [**Existing Features**](<#existing-features>)
     * [How To Play](<#how-to-play>)
     * [Future Features](<#future-features>)
-[Technologies Used](#technologies)
-[Deployment](#deployment)
+* [**Bugs**](<#bugs>)
+    *  [Resolved Bugs](<#resolved-bugs>)
+    *  [Unresolved Bugs](<#unresolved-bugs>)
+* [Technologies Used](#technologies)
+* [Deployment](#deployment)
 * [**Deployment**](<#deployment>)
 *  [**Acknowledgements**](<#acknowledgements>)
 # About
@@ -32,14 +35,20 @@ This is designed to be a one player game where 4 single space ships are randomly
 
 # Design Choices
 
-* I chose to have the x-axis of the grid as letters and the y-axis as numbers as having a coordinate system with two letters could easily lead to confusion. I also ensured that there was a space inbetween each column to stop the board from looking too narrow or unlegible.
+* I chose to have the x-axis of the grid as letters and the y-axis as numbers, as having a coordinate system with two letters could easily lead to confusion. I also ensured that there was a space inbetween each column to stop the board from looking too narrow or unlegible.
 
 [Back to top](<#contents>)
 
 # Existing Features  
   * ## How to Play
 
-    * When the game is loaded up, the board is presented to the player. The player is then asked to choose the difficulty they would like to play on, this determines how many shots the player will be allowed to take while looking for the 4 hidden ships. The player is then asked to give a coordinate to shoot at in the form of A3. A message then appears informing the player whether they missed or hit a battleship. The board is then updated and printed to the console showing where the player shot. An exclamation mark "!"  reveals where a player shot and missed, and an "X" shows where they hit a ship. They player is then shown how many shots they have left and is asked to shoot again. Once the player either wins or runs out of lives, a winning or losing message appears and asks if they would like to play again.
+    * When the game is loaded up, the board is presented to the player. 
+    
+    * The player is then asked to choose the difficulty they would like to play on, this determines how many shots the player will be allowed to take while looking for the 4 hidden ships. The player is then asked to give a coordinate to shoot at in the form of A3. A message then appears informing the player whether they missed or hit a battleship. 
+    
+    *The board is then updated and printed to the console showing where the player shot. An exclamation mark "!"  reveals where a player shot and missed, and an "X" shows where they hit a ship. They player is then shown how many shots they have left and is asked to shoot again. 
+    
+    *Once the player either wins or runs out of lives, a winning or losing message appears and asks if they would like to play again.
 
   * ## Future Features
 
@@ -48,6 +57,18 @@ This is designed to be a one player game where 4 single space ships are randomly
     * A score counter, keeping track of how many games the player has lost or won. 
 
 [Back to top](<#contents>)
+
+# Bugs
+
+# Resolved Bugs
+* When changing the board to display where the player had taken previous shots, I had trouble stopping the row of letters at the top of the board from being changeable. After many trials and errors, I managed to write this function.
+
+![Check row function image](readmeimg/check_row.png)
+
+* This ensures that the numerical value from the players guess has to be on the board and below the x-axis of letters.
+
+## Unresolved Bugs
+* I tried to add a score counter, keeping track of the players amount of games won and lost. I had a variable for wins and another for losses, both set to zero. A function would then be called at the end of each round to increment the appropriate variable and diplay how many wins and losses the player had. However, a long list of error messages would pop up at the end of each round and I was unable to figure out a way of making these score counters work. 
 
 ## Technologies Used
 
