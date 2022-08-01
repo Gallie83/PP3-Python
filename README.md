@@ -9,8 +9,8 @@ Github Repository: <a href="https://github.com/Gallie83/PP3-Python" target="_bla
     *  [User Stories](<#user-stories>)
 * [Design Choices](<#design-choices>)
 * [**Existing Features**](<#existing-features>)
-         * [How To Play](<#how-to-play>)
-         * [Future Features](<#future-features>)
+    * [How To Play](<#how-to-play>)
+    * [Future Features](<#future-features>)
 [Technologies Used](#technologies)
 [Deployment](#deployment)
 * [**Deployment**](<#deployment>)
@@ -28,9 +28,13 @@ This is designed to be a one player game where 4 single space ships are randomly
 * As a user I want to be able to select the difficulty.
 * As a user I want to have all the neccessary game information easily visible.
 
-# Design Choice
+[Back to top](<#contents>)
+
+# Design Choices
 
 * I chose to have the x-axis of the grid as letters and the y-axis as numbers as having a coordinate system with two letters could easily lead to confusion. I also ensured that there was a space inbetween each column to stop the board from looking too narrow or unlegible.
+
+[Back to top](<#contents>)
 
 # Existing Features  
   * ## How to Play
@@ -43,6 +47,8 @@ This is designed to be a one player game where 4 single space ships are randomly
     * Mulitple lengths of ship that would be placed both horizontally and vertically on the board.
     * A score counter, keeping track of how many games the player has lost or won. 
 
+[Back to top](<#contents>)
+
 ## Technologies Used
 
 ### Languages Used
@@ -54,6 +60,8 @@ This is designed to be a one player game where 4 single space ships are randomly
 - [Github](https://github.com/) - GitHub is used to host the project files.
 - [Heroku](https://www.heroku.com/) - Heroku is used to deploy the application.
 
+[Back to top](<#contents>)
+
 <a name="deployment"></a>
 ## Deployment
 
@@ -62,20 +70,31 @@ This is designed to be a one player game where 4 single space ships are randomly
     - I then went to Heroku itself and added the PORT: 8000 Config Var.
     - The buildpacks used for this application are Python and NodeJS, in that order.
 
+[Back to top](<#contents>)
+
 ### Build Log From Heroku
 
 -----> Building on the Heroku-20 stack
+
 -----> Using buildpacks:
        1. heroku/python
        2. heroku/nodejs
 -----> Python app detected
+
 -----> No Python version was specified. Using the same version as the last build: python-3.9.7
+
        To use a different version, see: https://devcenter.heroku.com/articles/python-runtimes
+
 -----> No change in requirements detected, installing from cache
+
 -----> Using cached install of python-3.9.7
+
 -----> Installing pip 20.2.4, setuptools 47.1.1 and wheel 0.36.2
+
 -----> Installing SQLite3
+
 -----> Installing requirements with pip
+
 -----> Node.js app detected
        
 -----> Creating runtime environment
