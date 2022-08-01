@@ -21,6 +21,16 @@ guessed_locations = []
 difficulty = []
 
 
+def introduction():
+    print("Welcome to battleship!\n")
+    print("There are 4, single coordinate, hidden ships on the board\nIts your job to find and destroy them!")
+    print("If you hit a ship it will be marked 'X'\nIf you miss it will be marked '!'")
+    print("Good luck!")
+
+
+introduction()
+
+
 def create_board():
     """
     Creates the board at the start of a new round
