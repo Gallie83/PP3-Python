@@ -16,7 +16,6 @@ Github Repository: <a href="https://github.com/Gallie83/PP3-Python" target="_bla
     *  [Unresolved Bugs](<#unresolved-bugs>)
 * [Testing](#testing)
 * [Technologies Used](#technologies)
-* [Deployment](#deployment)
 * [**Deployment**](<#deployment>)
 * [**Credits**](<#credits>)
     *  [Content](<#content>)
